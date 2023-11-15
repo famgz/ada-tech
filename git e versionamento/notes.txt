@@ -1,0 +1,40 @@
+// configuracao inicial
+
+git config --global user.name Bowie
+git config --global user.email marketing@letscode.com.br
+
+------------------------------------------------
+
+git clone https://github.com/...
+
+git init
+
+git status
+
+git add .\README.md
+
+git diff
+
+git commit -m "message"
+
+git restore filename // desfazer alteracoes no arquivo
+
+git restore --staged filename // remover status `add` do arquivo
+
+git remote
+
+git push origin main
+
+git fetch  // baixar modificacoes no remote, mas nao adiciona
+
+git diff origin/main  // visualizar modificacoes no remote
+
+git pull  // mesclar automaticamente mudancas vindas do remote
+
+git branch testing // criar nova branch
+
+git log --oneline --decorate // mostrar commits simplificados
+
+git checkout testing // trocar de branch
+
+git merge testing  // mesclar em main as modificacoes de testing

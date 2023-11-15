@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+</head>
+
+<body>
+    <main>
+        <h1>Tabelas no HTML</h1>
+        <section id="students">
+            <h2>Alunos</h2>
+
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th colspan="3">Tabela de Registro de Aluno</th>
+                    </tr>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Matricula</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Carol Danvers</td>
+                        <td>caro.danvers@email.com</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Peter Parker</td>
+                        <td>peterparker@email.com</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Tony Stark</td>
+                        <td>tonystark@email.com</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section id="finance">
+            <h2>Financeiro</h2>
+
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            Tabela de Controle Financeiro
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Descricao</th>
+                        <th>Valor</th>
+                    </tr>
+
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td rowspan="2">15/06/2022</td>
+                        <td>Despesa</td>
+                        <td>Almoco</td>
+                        <td>R$ 35,00</td>
+                    </tr>
+                    <tr>
+                        <!-- <td>15/06/2022</td> -->
+                        <td>Receita</td>
+                        <td>Salario</td>
+                        <td>R$ 3.576,00</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+
+</html>

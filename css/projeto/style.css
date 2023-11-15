@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+    --default-border: 0.1rem solid rgba(0, 0, 0, 0.15);
+    --default-border-radius: 1.2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+
+    & .content {
+        display: grid;
+        grid-template-areas:
+            ". . . ."
+            ". hero form ."
+            ". hero form ."
+            ". . . ."
+        ;
+        gap: 8.5rem;
+    }
+}
+
+/* Grid template area names */
+main {
+    grid-area: form;
+}
+
+aside {
+    grid-area: hero;
+}
+
+aside {
+
+    & h1 {
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 75px;
+
+        & span {
+            color: #ff5678;
+        }
+    }
+}
+
+main {
+    width: 60rem;
+    height: 52rem;
+    border: var(--default-border);
+    padding: 4.4rem 5.7rem;
+    border-radius: var(--default-border-radius);
+
+    & h2 {
+        max-width: 43rem;
+        font-size: 3.6rem;
+        font-weight: 500;
+
+        & span {
+            color: #ff5678;
+        }
+    }
+
+    & .actions {
+        display: flex;
+        flex-flow: column wrap;
+
+        & a {
+            font-size: 2.4rem;
+            text-decoration: none;
+            height: 5.5rem;
+            border-radius: var(--default-border-radius);
+            background-color: #35E6E9;
+            color: #fff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5.4rem;
+        }
+
+        & a+a {
+            background-color: #ff5678;
+            margin-top: 4.8rem;
+        }
+    }
+
+    & footer {
+
+        & p {
+            font-size: 1.6rem;
+            margin-top: 8rem;
+        }
+
+        & a {
+            margin-top: 1rem;
+            font-size: 1.8rem;
+            display: block;
+            text-align: center;
+            color: #000;
+        }
+    }
+}
+
+/* cadastro.html */
+
+main {
+
+    position: relative;
+
+    & header {
+        display: flex;
+        align-items: center;
+        gap: 0 1.8rem;
+
+        & i {
+            font-size: 2rem;
+            color: #ff5678;
+        }
+    }
+
+    & form {
+
+        margin-top: 1.6rem;
+
+        & label {
+            font-size: 1.8rem;
+            font-weight: 400;
+            text-transform: lowercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        & select {
+            appearance: none;  /* Hide selector arrow */
+        }
+
+        & .select-div {
+            position: relative;
+
+            &::after {
+                top: 1.6rem;
+                right: 1.6rem;
+                font-size: 2.4rem;
+                font-weight: 600;
+                content: '\f107';
+                font-family: 'Font Awesome 6 Free';
+                color: #35E6E9;
+                position: absolute;
+                z-index: 1;
+            }
+        }
+
+        & :is(input, select) {
+            width: 48.9rem;
+            height: 5.5rem;
+
+            background-color: #fff;
+            border: var(--default-border);
+            border-radius: var(--default-border-radius);
+
+            & + button {
+                position: absolute;
+                right: -3.8rem;
+                top: 5rem;
+                background-color: transparent;
+                border: none;
+                color: #35E6E9;
+                font-size: 2.4rem;
+                cursor: pointer;
+            }
+        }
+
+        & .points {
+            position: relative;
+        }
+    }
+}
