@@ -1,0 +1,3 @@
+thumb
+
+https://i.ytimg.com/vi/${videoId}/hqdefault.jpg
