@@ -33,7 +33,7 @@ console.log(calcular(4, 5, (n1, n2) => n1 * n2 + 2 * n1 * n2));
 
 // * 1. forEach()
 
-const numeros = [40, 34, 67, 89, 23, 10];
+let numeros = [40, 34, 67, 89, 23, 10];
 
 // function imprimirElemento(item) {
 //     if(item > 30) console.log(item)
@@ -104,12 +104,68 @@ const algumMaiorIdade = pessoas.some((pessoa) => pessoa.idade >= 18); // true
 
 console.clear();
 
-// * 6. map(): executa callbackFn para cada elemento do array e retorna o novo array
+// * 6. map(): retorna novo array e aplica callbackFn para cada elemento
 
 const pessoasComSobrenomeEMaiorIdade = pessoas.map((pessoa) => {
-  pessoa.nome + ' Sobrenome';
-  pessoa.maiorIdade = pessoa.idade >= 18
-  return pessoa
+  pessoa.sobrenome = ' Sobrenome';
+  pessoa.nomeCompleto = pessoa.nome + pessoa.sobrenome;
+  pessoa.maiorIdade = pessoa.idade >= 18;
+  return pessoa;
 });
 
 console.log(pessoasComSobrenomeEMaiorIdade);
+
+// Desestruturacao (... spread operator)
+const pessoa = {
+  nome: 'Walisson',
+  idade: 27,
+  altura: 1.77,
+};
+
+const pessoaComPeso = {
+  ...pessoa,
+  peso: 79,
+};
+
+console.log(pessoaComPeso);
+
+// * 6. filter(): retorna novo array com tamanho igual ou menor que original com itens que atendam a condicao. pode aplicar callbackFn para cada elemento
+
+const somenteParesAoQuadrado = numeros.filter((num) => {
+  if (num % 2 === 0) return num ** 2;
+});
+
+console.log(somenteParesAoQuadrado);
+
+
+// * 7. reduce(): executa para cada elemento do array uma funcao, resultando em um unico elemento
+
+numeros = [5, 10, 15]
+
+const somaNumerosMais10 = numeros.reduce((acumulador, numeroAtual) => {
+  return acumulador + numeroAtual;
+}, 10);  // 10 -> valor inicial (default: 0)
+
+console.log(somaNumerosMais10);  // 40
+
+const somaParesMais100 = numeros.reduce((acumulador, numeroAtual) => {
+    if(numeroAtual % 2 ===0) return acumulador + numeroAtual
+    else return acumulador
+}, 100)
+
+console.log(somaParesMais100);  // 110
+
+console.clear();
+
+
+const carrinho = [
+    { produto: 'feijao', preco: 7.90, quantidade: 3},
+    { produto: 'arroz', preco: 3.90, quantidade: 5},
+    { produto: 'leite', preco: 5.90, quantidade: 2},
+]
+
+const totalCarrinho = carrinho.reduce((acumulador, item) => {
+    return acumulador + item.preco * item.quantidade
+}, 0)
+
+console.log(totalCarrinho)  // 55.0
