@@ -1,0 +1,2 @@
+document.querySelector('#ds-sidebar').style.display = 'none'
+document.querySelector('.sc-ktPPKK.ddvfMs').style.padding = '0'

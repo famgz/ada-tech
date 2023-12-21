@@ -16,8 +16,8 @@ async function getUser(id) {
         const res = await fetch(`https://dummyapi.io/data/v1/user/${id}`, {
             headers: headers,
         });
-        const user = await res.json()
-        console.log(user)
+        const user = await res.json();
+        console.log(user);
     } catch (erro) {
         console.log('Erro ao tentar obter dados do usuario:', erro);
     }
