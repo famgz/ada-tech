@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lista de Tarefas</title>
+        <style>
+            body {
+                padding-left: 20px;
+            }
+            ul {
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    margin: 5px 0;
+
+                    input {
+                        margin: 0;
+                    }
+
+                    span {
+                        display: inline-block;
+                        width: 150px;
+                        margin-left: 10px;
+                        text-align: left;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header></header>
+
+        <main>
+            <h1>Lista de Tarefas</h1>
+
+            <br />
+
+            <form id="todo-form">
+                <input
+                    type="text"
+                    id="task-title-input"
+                    placeholder="Informe a sua tarefa"
+                />
+                <!-- Todo botao que seja unico dentro de um formulario eh por padrao do type=submit -->
+                <button type="submit" id="add-task-button">Adicionar</button>
+            </form>
+
+            <br />
+
+            <section>
+                <ul id="todo-list">
+                    <!-- <li>
+                        <input type="checkbox" />
+                        <span>Tarefa 1</span>
+                        <button>Remover</button>
+                    </li> -->
+                </ul>
+            </section>
+        </main>
+
+        <footer></footer>
+
+        <script src="index.js"></script>
+    </body>
+</html>
