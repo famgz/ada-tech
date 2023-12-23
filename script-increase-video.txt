@@ -1,2 +1,6 @@
 document.querySelector('#ds-sidebar').style.display = 'none'
 document.querySelector('.sc-ktPPKK.ddvfMs').style.padding = '0'
+document.querySelector('.sc-bBeLUv.emuhn').style.margin = 0
+document.querySelector('.sc-jnOGJG.guEDgs').style.padding = 0
+document.querySelector('.sc-ihgnxF.bhiOWT').style.gap = 0
+document.querySelector('header h1').style.fontSize = '1rem'
