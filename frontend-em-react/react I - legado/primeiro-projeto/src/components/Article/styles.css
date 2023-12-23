@@ -1,0 +1,28 @@
+#article {
+  display: flex;
+  gap: 1rem;
+
+  img {
+    width: 350px;
+    border-radius: 5px;
+  }
+
+  .article-infos {
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #8695a4;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #bbb;
+    }
+  }
+}
