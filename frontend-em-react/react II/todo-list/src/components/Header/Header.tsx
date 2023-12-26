@@ -1,3 +1,4 @@
+// * Importacao estilos
 // forma antiga de importacao classica de CSS
 // import './styles.module.css'
 
@@ -13,11 +14,23 @@
 import styles from './styles.module.scss';
 // console.log(styles);
 
+import { useContext } from 'react';
 import { StatsCard } from '../StatsCard/StatsCard';
+import { TasksContext } from '../../context/TasksContext';
 
 // usando arrow functions nos permite especificar que eh um componente funcional do React (Functional Component)
 // vantagem de declarar com React.FC eh que da erro quando se omite o retorno
 export const Header: React.FC = () => {
+  const { tasks } = useContext(TasksContext);
+
+  const totalTasks = Object.keys(tasks).length;
+
+  const totalPending = Object.values(tasks).reduce((total, task) => {
+    if (!task.done) return total + 1;
+    return total;
+  }, 0);
+
+  const totalDone = totalTasks - totalPending
 
   return (
     // <header className='header'>
@@ -25,12 +38,12 @@ export const Header: React.FC = () => {
       <div className={styles.container}>
         <div>
           <h1>My Todo</h1>
-          <span>Bem vindo, Walter!</span>
+          <span>Bem vindo, Walter Branco!</span>
         </div>
         <div>
-          <StatsCard title='Total de tarefas' value={5} />
-          <StatsCard title='Tarefas Pendentes' value={4} />
-          <StatsCard title='Tarefas Concluídas' value={1} />
+          <StatsCard title='Total de tarefas' value={totalTasks} />
+          <StatsCard title='Tarefas Pendentes' value={totalPending} />
+          <StatsCard title='Tarefas Concluídas' value={totalDone} />
         </div>
       </div>
     </header>
