@@ -1,3 +1,5 @@
+## Instalacao Inicial
+
 `yarn create react-app myshop --template typescript`
 `yarn start`
 
@@ -13,6 +15,8 @@ fakestoreapi.com/products
 react-icons.github.io/react-icons
 `yarn add react-icons`
 
+## Redux
+
 redux.js.org
 whimsical.com/redux-VRMDFyyXby3WaZ3n8uTEGB
 
@@ -23,8 +27,17 @@ Redux Core (without toolkit)
 
 `yarn add @reduxjs/toolkit`  // ja vem com declaracoes de tipo
 
-Testes
+## Testes
 
 jest.io  // ja incluso no `create react-app`
 testing-library.com  // ja incluso no `create react-app`
 cypress.io
+
+## Deploy
+
+vercel.com
+
+`vercel`  // dentro da pasta do projeto; tambem atualiza o projeto apos mudancas; a partir do segundo deploy, ira subir para um link de teste e nao producao
+`vercel --prod`  // forcar deploy para producao a partir dos proximos deploy
+
+https://myshop-black.vercel.app/
