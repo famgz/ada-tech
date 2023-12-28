@@ -6,13 +6,11 @@ import { removeProduct } from '../../redux/Cart/cart-slice';
 
 interface CartProps {
   showCart: boolean;
+  cart: Product[]
   selfClose: () => void
 }
 
-export const Cart: React.FC<CartProps> = ({ showCart, selfClose }) => {
-  const { cart } = useSelector(
-    (rootReducer: RootReducer) => rootReducer.cartReducer
-  );
+export const Cart: React.FC<CartProps> = ({ showCart, cart, selfClose }) => {
 
   const dispatch = useDispatch();
 
@@ -44,7 +42,7 @@ export const Cart: React.FC<CartProps> = ({ showCart, selfClose }) => {
           </S.CartProductItem>
         ))}
       </S.CartProductsList>
-      <S.CartTotal>Total: ${total}</S.CartTotal>
+      <S.CartTotal data-testid='total'>Total: ${total}</S.CartTotal>
     </S.Container>
   );
 };

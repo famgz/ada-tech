@@ -1,4 +1,5 @@
 document.querySelector('#ds-sidebar').style.display = 'none'
+document.querySelector('.sc-bVHCgj.drgzVw').style.display = 'none'
 document.querySelector('.sc-ktPPKK.ddvfMs').style.padding = '0'
 document.querySelector('.sc-bBeLUv.emuhn').style.margin = 0
 document.querySelector('.sc-jnOGJG.guEDgs').style.padding = 0
