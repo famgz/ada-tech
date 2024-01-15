@@ -1,0 +1,41 @@
+.page-content {
+    height: 100vh;
+    display: grid;
+
+    & h1 {
+        font-size: 5rem;
+    }
+
+    & h1 p + p {
+        color: #52b69a;
+    }
+}
+
+main {
+    grid-area: title;
+}
+
+aside {
+    grid-area: login;
+}
+
+footer {
+    grid-area: footer;
+}
+
+@media screen and (min-width: 1024px) {
+    .page-content {
+        display: grid;
+        gap: 10rem 0;
+        
+        grid-template-areas:
+            /* cols numbers must be consistent */
+            ". . . . ."
+            ". title title login ."
+            ". title title login ."
+            ". title title login ."
+            ". . . . ."
+            "footer footer footer footer footer"
+        ;
+    }
+}

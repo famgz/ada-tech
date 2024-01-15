@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    /* padding: 7rem 0; */
+}
+
+.boxes {
+    height: calc(100vh - (7 * 2rem));
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;  /* fit elements to screen! */
+    /* flex-direction: column-reverse; */
+    flex-flow: row wrap; /* shorthand */
+    justify-content: flex-start;
+    /* align-items: center; */
+    align-content: center;
+    align-items: center;
+    gap: 2rem 5rem;
+}
+
+.box {
+    min-height: 10rem;
+    min-width: 20rem;
+    padding: 1rem;
+    border: 1rem solid red;
+    background-color: blue;
+    color: #fff;
+    font-size: 2rem;
+    flex-basis: calc(50% - 5rem); /* fixed amount of items per row */
+    flex: 1; /*  */
+
+    display: flex;
+    gap: 0 2rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.box:nth-child(3) {
+    order: 1;  /* alterar posicao do elemento no seu contexto */
+}
+
+.box p, button {
+    font-size: 4rem;
+}

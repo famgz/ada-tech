@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 0 20px;
+}
+
+.bg {
+    width: 100%;
+    background-image: url('https://img.freepik.com/free-photo/view-modern-office_1170-1969.jpg?w=740&t=st=1700060372~exp=1700060972~hmac=7e0756f695b915f097e22a9e4111d7169acd4d6ed992c0c1a66835f57f7a856d');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: purple;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* Different ways to hide an element */
+a {
+    background: steelblue;
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    width: 80%;
+    text-decoration: none;
+    text-align: center;
+    margin: 2rem auto;
+
+    display: block;
+
+    /* display: none;
+    visibility: hidden;
+    opacity: 0; */
+}
+
+[data-anchor="products"]:hover {
+    color: rgb(184, 133, 133);
+    background-color: aqua;
+    transform: scale(1.1);
+    transition: .2s ease-in-out, background-color 1s ease-in-out;
+}
+
+[data-anchor="team"] {
+    margin-top: 2rem;
+    animation: pulsar 2s infinite;
+    /* animation-direction: alternate; */
+    transform: scale(1);
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: .6;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.spinner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-spinner {
+    margin-top: 3rem;
+    margin: 4rem;
+    font-size: 5rem;
+    color: blueviolet;
+    animation: girar 1.5s infinite;
+}
+
+@keyframes girar {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+}
+
+/* Select all that contains custom attributes */
+[data-company] {
+    background-color: #999;
+}
+
+/* Select by custom attribute value */
+[data-company="GCO"] {
+    background-color: aqua;
+}
+
+/* desktop */
+@media screen and (min-width: 1000px) {
+    .bg {
+        height: 10vh;
+    }
+}
+
+/* tablets */
+@media screen and (min-width: 768px) and (max-width: 999px) {
+    .bg {
+        height: 20vh;
+    }
+}
+
+/* phone */
+@media screen and (max-width: 767px) {
+    .bg {
+        height: 5vh;
+    }
+
+    table {
+        display: none;
+    }
+
+    h1 {
+        color: red;
+    }
+}
+
+@media print {
+    .bg {
+        display: none;
+        /* Hide image when printing (ctrl+p) the page */
+    }
+}

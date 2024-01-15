@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Filmes da Marvel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Bangers', system-ui;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(to bottom, #666, #bbb);
+        color: white;
+      }
+      * {
+        letter-spacing: 1.5px;
+        word-spacing: 3px;
+        font-weight: 100;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .image {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        width: 100%;
+        background-color: #ed1d24;
+      }
+      .melhores {
+        color: #ddd;
+    }
+    .melhores li {
+        margin-bottom: 5px;
+      }
+      table {
+        border-collapse: collapse;
+        border-color: #e4585d;
+        background-color: white;
+      }
+      th,
+      td {
+        padding: 5px 30px;
+      }
+      td {
+        color: #666;
+      }
+      th {
+        background-color: #e4585d;
+      }
+      .avaliacao {
+        text-align: end;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="image">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Marvel_Logo.svg"
+          width="200"
+          alt="logo marvel"
+        />
+      </div>
+      <h1>Filmes da Marvel</h1>
+      <p>Os melhores filmes do Universo Cinematográfico da Marvel.</p>
+
+      <ol class="melhores">
+        <li>Vingadores: Ultimato</li>
+        <li>Pantera Negra</li>
+        <li>Homem de Ferro</li>
+        <li>Guardiões da Galáxia</li>
+        <li>Thor: Ragnarok</li>
+      </ol>
+
+      <h2>Tabela de Classificação</h2>
+      <table border="1">
+        <tr>
+          <th>Filme</th>
+          <th>Avaliação</th>
+        </tr>
+        <tr>
+          <td>Vingadores: Ultimato</td>
+          <td class="avaliacao">9/10</td>
+        </tr>
+        <tr>
+          <td>Pantera Negra</td>
+          <td class="avaliacao">8/10</td>
+        </tr>
+        <tr>
+          <td>Homem de Ferro</td>
+          <td class="avaliacao">8.5/10</td>
+        </tr>
+        <tr>
+          <td>Guardiões da Galáxia</td>
+          <td class="avaliacao">8.5/10</td>
+        </tr>
+        <tr>
+          <td>Thor: Ragnarok</td>
+          <td class="avaliacao">7.5/10</td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

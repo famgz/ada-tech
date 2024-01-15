@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      section {
+        text-align: center;
+      }
+
+      .card {
+        border: 2px solid #333;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        background-color: white;
+
+        & li {
+          text-align: left;
+        }
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      #pai {
+        background-color: #9ad3bc;
+      }
+
+      #mae {
+        background-color: #f2b3a2;
+      }
+
+      #filho {
+        background-color: #a9cce3;
+      }
+
+      #filha {
+        background-color: #f9d4ac;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #aaa;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+    <title>Rotina Semanal da Família</title>
+  </head>
+  <body>
+    <header>
+      <h1>Rotina Semanal da Família</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Lista de Compras</h2>
+
+        <div class="cards">
+          <div class="card" id="pai">
+            <h3>Pai</h3>
+            <ul>
+              <li>Vegetais</li>
+              <li>Frutas</li>
+              <li>Legumes</li>
+              <li>Proteínas vegetais</li>
+            </ul>
+          </div>
+
+          <div class="card" id="mae">
+            <h3>Mãe</h3>
+            <ul>
+              <li>Vegetais</li>
+              <li>Frutas</li>
+              <li>Carne não contendo nozes ou frutos do mar</li>
+              <li>Temperos picantes</li>
+            </ul>
+          </div>
+
+          <div class="card" id="filho">
+            <h3>Filho Adolescente</h3>
+            <ul>
+              <li>Lanches saudáveis</li>
+              <li>Frutas</li>
+              <li>Iogurte</li>
+              <li>Grãos integrais</li>
+            </ul>
+          </div>
+
+          <div class="card" id="filha">
+            <h3>Filha de 10 Anos</h3>
+            <ul>
+              <li>Massas</li>
+              <li>Molhos italianos</li>
+              <li>Queijos</li>
+              <li>Frutas</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Lista de Afazeres</h2>
+
+        <div class="cards">
+          <div class="card" id="pai">
+            <h3>Pai</h3>
+            <ul>
+              <li>Cozinhar refeições saudáveis</li>
+              <li>Praticar esportes</li>
+            </ul>
+          </div>
+
+          <div class="card" id="mae">
+            <h3>Mãe</h3>
+            <ul>
+              <li>Cuidar das alergias</li>
+              <li>Preparar refeições com tempero picante</li>
+            </ul>
+          </div>
+
+          <div class="card" id="filho">
+            <h3>Filho Adolescente</h3>
+            <ul>
+              <li>Estudar para a escola</li>
+              <li>Praticar esportes</li>
+            </ul>
+          </div>
+
+          <div class="card" id="filha">
+            <h3>Filha de 10 Anos</h3>
+            <ul>
+              <li>Aprender a tocar piano</li>
+              <li>Ajudar na preparação das refeições</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Menu Semanal</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Dia</th>
+              <th>Café da Manhã</th>
+              <th>Almoço</th>
+              <th>Lanche</th>
+              <th>Janta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Segunda</td>
+              <td>Cereal com frutas</td>
+              <td>Salada de quinoa e legumes</td>
+              <td>Iogurte com granola</td>
+              <td>Macarrão integral com molho de tomate</td>
+            </tr>
+            <tr>
+              <td>Terça</td>
+              <td>Omelete com espinafre</td>
+              <td>Peito de frango grelhado com arroz integral</td>
+              <td>Frutas frescas</td>
+              <td>Vegetais assados com tofu</td>
+            </tr>
+            <tr>
+              <td>Quarta</td>
+              <td>Panquecas de aveia com mel</td>
+              <td>Salada de lentilhas</td>
+              <td>Smoothie de frutas</td>
+              <td>Pizza de vegetais</td>
+            </tr>
+            <tr>
+              <td>Quinta</td>
+              <td>Smoothie bowl com granola</td>
+              <td>Salmão assado com batata doce</td>
+              <td>Castanhas e frutas secas</td>
+              <td>Arroz integral com legumes</td>
+            </tr>
+            <tr>
+              <td>Sexta</td>
+              <td>Torradas com abacate</td>
+              <td>Salada de macarrão integral</td>
+              <td>Iogurte grego com mel</td>
+              <td>Tacos vegetarianos</td>
+            </tr>
+            <tr>
+              <td>Sábado</td>
+              <td>Ovos mexidos com espinafre</td>
+              <td>Wrap de frango com vegetais</td>
+              <td>Frutas frescas</td>
+              <td>Sopa de lentilhas</td>
+            </tr>
+            <tr>
+              <td>Domingo</td>
+              <td>Pão integral com abacate</td>
+              <td>Churrasco vegetariano</td>
+              <td>Smoothie de proteína</td>
+              <td>Salada de quinoa com legumes</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>`
+  </body>
+</html>

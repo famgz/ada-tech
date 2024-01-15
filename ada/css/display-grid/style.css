@@ -1,0 +1,28 @@
+.box {
+    min-height: 3rem;
+    min-width: 4rem;
+    border: 5px solid red;
+    background-color: blue;
+    color: #fff;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.box p, button {
+    font-size: 2rem;
+}
+
+.boxes {
+    height: calc(100vh);
+    position: relative;
+
+    display: grid;
+    justify-content: flex-end;
+    align-content: center;
+    gap: 2rem 2rem;
+
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr repeat(3, 1fr);
+    /* grid-template-rows: minmax(150px, 10fr) 2fr; */
+}

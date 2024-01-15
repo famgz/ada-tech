@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pacotes Turisticos</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      tr,
+      td {
+        height: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Pacotes Turisticos</h1>
+
+      <!-- Opcao nested table -->
+      <table border="2">
+        <thead>
+          <tr>
+            <th>Destino</th>
+            <th>Duracao da Viagem</th>
+            <th>Atividades Incluidas</th>
+            <th>Preco por pessoa</th>
+            <th>Vagas disponiveis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Paris</th>
+            <td>x</td>
+            <td>
+              <table class="inner" style="width: 100%" border="" frame="void">
+                <tr>
+                  <td>a</td>
+                  <td>a</td>
+                </tr>
+                <tr>
+                  <td>a</td>
+                  <td>a</td>
+                </tr>
+              </table>
+            </td>
+            <td>x</td>
+            <td>x</td>
+          </tr>
+          <tr>
+            <th>Cancun</th>
+            <td>x</td>
+            <td>
+              <table class="inner" style="width: 100%" border="" frame="void">
+                <tr>
+                  <td>a</td>
+                  <td>a</td>
+                </tr>
+                <tr>
+                  <td>a</td>
+                  <td>a</td>
+                </tr>
+              </table>
+            </td>
+            <td>x</td>
+            <td>x</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+      <br />
+
+      <!-- Opcao com colspan rowspan -->
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Destino</th>
+            <th>Duração da Viagem</th>
+            <th colspan="2">Atividades Incluídas</th>
+            <th>Preço por Pessoa</th>
+            <th>Vagas Disponíveis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="2">Paris</th>
+            <td rowspan="2">1 dia</td>
+            <td>Trilha</td>
+            <td>Tore Eiffel</td>
+            <td rowspan="2">R$ 580,00</td>
+            <td rowspan="2">5</td>
+          </tr>
+          <tr>
+            <td>Restaurante</td>
+            <td>Festa</td>
+          </tr>
+          <tr>
+            <th rowspan="2">Cancún</th>
+            <td rowspan="2">3 dias</td>
+            <td>Restaurante</td>
+            <td>Viagem</td>
+            <td rowspan="2">R$ 480,00</td>
+            <td rowspan="2">7</td>
+          </tr>
+          <tr>
+            <td>Passeio Turístico</td>
+            <td>Museu</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
