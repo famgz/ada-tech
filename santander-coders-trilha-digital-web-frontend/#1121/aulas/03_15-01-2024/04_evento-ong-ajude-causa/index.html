@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>ONG Ajude a Causa</title>
+  </head>
+  <body>
+    <!-- <header>
+      <h1>ONG Ajude a Causa</h1>
+    </header> -->
+
+    <main>
+      <div class="container">
+        <form class="main-form" action="sucesso.html">
+          <h2 class="main-form-title">Escolha o valor da Doação</h2>
+          <div class="donation-container">
+            <div class="donation-box">
+              <input
+                type="radio"
+                id="donation-10"
+                name="valor-doacao"
+                value="10"
+                checked
+                required
+              />
+              <label for="donation-10">
+                <span class="donation-value">$10</span>
+                <span class="donation-text"
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+                  sapiente.</span
+                >
+              </label>
+            </div>
+            <div class="donation-box db-mid">
+              <input
+                type="radio"
+                id="donation-25"
+                name="valor-doacao"
+                value="25"
+              />
+              <label for="donation-25">
+                <span class="donation-value">$25</span>
+                <span class="donation-text"
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+                  sapiente.</span
+                >
+              </label>
+            </div>
+            <div class="donation-box">
+              <input
+                type="radio"
+                id="donation-50"
+                name="valor-doacao"
+                value="50"
+              />
+              <label for="donation-50">
+                <span class="donation-value">$50</span>
+                <span class="donation-text"
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+                  sapiente.</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div style="display: grid; gap: 10px">
+            <h2 class="main-form-title">Informe seus dados</h2>
+            <label class="label-title">
+              <h3>Nome</h3>
+              <input
+                class="input-trans"
+                type="text"
+                name="nome"
+                placeholder="Digite seu nome completo"
+                required
+              />
+            </label>
+
+            <div style="display: flex; gap: 20px">
+              <label class="label-title" style="flex-grow: 1">
+                <h3>E-mail</h3>
+                <input
+                  class="input-trans"
+                  type="email"
+                  name="email"
+                  placeholder="Digite seu e-mail"
+                  required
+                />
+              </label>
+
+              <label class="label-title">
+                <h3>Idade</h3>
+                <input
+                  class="input-trans"
+                  type="number"
+                  name="idade"
+                  placeholder="idade"
+                  min="12"
+                  max="100"
+                  required
+                />
+              </label>
+            </div>
+
+            <label class="label-title">
+              <h3>Endereço</h3>
+              <input
+                class="input-trans"
+                type="text"
+                name="endereco"
+                placeholder="Digite seu endereço completo"
+                required
+              />
+            </label>
+          </div>
+
+          <div class="label-title">
+            <h2 class="main-form-title">Tamanho da camiseta</h2>
+            <div class="radio-opt-box">
+              <label>
+                <input
+                  type="radio"
+                  name="tamanho-camisa"
+                  value="P"
+                  required
+                  checked
+                />
+                <span>P</span>
+              </label>
+              <label>
+                <input type="radio" name="tamanho-camisa" value="M" />
+                <span>M</span>
+              </label>
+              <label>
+                <input type="radio" name="tamanho-camisa" value="G" />
+                <span>G</span>
+              </label>
+              <label>
+                <input type="radio" name="tamanho-camisa" value="GG" />
+                <span>GG</span>
+              </label>
+              <label>
+                <input type="radio" name="tamanho-camisa" value="XG" />
+                <span>XG</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="label-title">
+            <h2 class="main-form-title">Categoria Corrida</h2>
+            <div class="radio-opt-box">
+              <label>
+                <input
+                  type="radio"
+                  name="categoria-corrida"
+                  value="3RUN"
+                  required
+                  checked
+                />
+                <div>
+                  3km<br />
+                  <span>Corrida</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="categoria-corrida" value="5RUN" />
+                <div>
+                  5km<br />
+                  <span>Corrida</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="categoria-corrida" value="4WALK" />
+                <div>
+                  4km<br />
+                  <span>Caminhada</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit">
+            <span>Enviar Doação</span>
+          </button>
+        </form>
+
+        <div class="hero">
+          <h1>
+            ONG<br />
+            Ajude a Causa
+          </h1>
+          <div class="slogan-box">
+            <h2>Corrida Beneficente</h2>
+            <p>
+              Junte-se a nós nesta incrível jornada de solidariedade e
+              superação! Na nossa maratona beneficente, cada passo conta, cada
+              quilômetro faz a diferença.
+            </p>
+            <p>
+              Corremos não apenas por desafios pessoais, mas também para apoiar
+              causas nobres.
+            </p>
+            <p>
+              Vamos correr juntos, unindo forças em prol da solidariedade,
+              transformando quilômetros em sorrisos e esperança.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

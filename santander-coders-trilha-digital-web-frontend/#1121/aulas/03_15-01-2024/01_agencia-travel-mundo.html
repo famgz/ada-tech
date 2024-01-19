@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agencia Travel Mundo</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      form {
+        display: grid;
+        width: 300px;
+        gap: 20px;
+        margin: 0 auto;
+      }
+      .wrapper {
+        display: grid;
+        gap: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      input,
+      select {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Agencia Travel Mundo</h1>
+
+      <form action="02_form-response.html" method="get">
+        <div class="wrapper">
+          <label>
+            1. Insira seu nome completo:
+            <input type="text" name="nome-completo" />
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label>
+            2. Escolha a data de partida:
+            <input type="date" name="data-partida" />
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label>
+            3. Escolha o numero de passageiros:
+            <input type="number" name="numero-passageiros" />
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label>
+            4. Selecione o pais de residencia:
+            <select name="pais-origem" id="">
+              <option value="brasil">Brasil</option>
+              <option value="brasil">Equador</option>
+              <option value="brasil">Argentina</option>
+              <option value="brasil">Venezuela</option>
+              <option value="brasil">Uruguai</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label>
+            5. Digite seu email:
+            <input type="email" name="email" />
+          </label>
+        </div>
+
+        <div class="wrapper">
+          6. Selecione um tipo de refeicao durante o voo:
+          <label for="vegetariano">
+            <input
+              type="radio"
+              name="refeicao"
+              value="vegetariano"
+              id="vegetariano"
+            />
+            Vegetariano
+          </label>
+          <label for="sem-gluten">
+            <input
+              type="radio"
+              name="refeicao"
+              value="sem-gluten"
+              id="sem-gluten"
+            />
+            Sem Gluten
+          </label>
+          <label for="padrao">
+            <input type="radio" name="refeicao" value="padrao" id="padrao" />
+            Padrao
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label>
+            7. Digite seu telefone:
+            <input type="tel" name="telefone" />
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label>
+            8. Selecione o destino da viagem:
+            <select name="pais-destino" id="">
+              <option value="brasil">New York</option>
+              <option value="brasil">Helsinski</option>
+              <option value="brasil">Buenos Aires</option>
+              <option value="brasil">Porto</option>
+              <option value="brasil">Tokyo</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="wrapper">
+          9. Preferencia de assento
+          <label for="janela">
+            <input type="radio" name="assento" value="janela" id="janela" />
+            Janela
+          </label>
+          <label for="corredor">
+            <input type="radio" name="assento" value="corredor" id="corredor" />
+            Corredor
+          </label>
+          <label for="emergencia">
+            <input
+              type="radio"
+              name="assento"
+              value="emergencia"
+              id="emergencia"
+            />
+            Proximo a saida de emergencia
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label>
+            10. Insira numero do cartao de credito:
+            <input type="text" name="cartao-credito" />
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label>
+            11. Envie foto do passaporte digitalizado:
+            <input type="file" name="passaporte" />
+          </label>
+        </div>
+
+        <div class="wrapper">
+          12. Selecione preferencias de servico:
+          <label for="servico-quarto">
+            <input
+              type="checkbox"
+              id="servico-quarto"
+              name="preferencia-servico"
+              value="servico-quarto"
+            />
+            Servico de quarto
+          </label>
+          <label for="traslado">
+            <input
+              type="checkbox"
+              id="traslado"
+              name="preferencia-servico"
+              value="traslado"
+            />
+            Traslado aeroporto
+          </label>
+          <label for="passeio">
+            <input
+              type="checkbox"
+              id="passeio"
+              name="preferencia-servico"
+              value="passeio"
+            />
+            Passeio Turistico
+          </label>
+        </div>
+
+        <div>
+          <button type="submit">Enviar</button>
+          <button type="reset">Limpar</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

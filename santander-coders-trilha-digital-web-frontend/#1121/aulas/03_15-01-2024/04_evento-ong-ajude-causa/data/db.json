@@ -1,0 +1,14 @@
+{
+  "registrations": [
+    {
+      "id": "bc9a",
+      "valor-doacao": "10",
+      "nome": "Filipe Miranda",
+      "email": "felipe@email.com",
+      "idade": "23",
+      "endereco": "rua da amargura",
+      "tamanho-camisa": "G",
+      "categoria-corrida": "5RUN"
+    }
+  ]
+}
