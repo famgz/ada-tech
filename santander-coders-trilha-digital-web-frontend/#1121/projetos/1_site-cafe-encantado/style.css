@@ -1,0 +1,270 @@
+header {
+  background-color: var(--lighter);
+
+  & .header-wrapper {
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+
+    & .logo {
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+    & .nav-items {
+      font-size: 1.4rem;
+      gap: 2rem;
+      font-weight: bolder;
+    }
+    & .search-box {
+      display: flex;
+      gap: 1rem;
+      border: 1px solid #2f21052e;
+      border-radius: 999px;
+      padding: 0.7rem;
+
+      & input {
+        border: none;
+        font-size: 1rem;
+        border-radius: 999px;
+      }
+    }
+    & .hamburger {
+      display: none;
+    }
+  }
+}
+
+#hero {
+  background-image: url(images/psy-r.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  min-height: 700px;
+  color: var(--lighter);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: linear-gradient(to right, black, rgba(255, 255, 255, 0.518));
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  & > div {
+    display: grid;
+    justify-content: start;
+    gap: 2rem;
+    height: 100%;
+    min-height: 100% !important;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: 999;
+  }
+  & .button {
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  & .slogan {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 400px;
+  }
+}
+
+#about {
+  color: var(--secondary);
+  background-color: var(--lighter);
+  justify-content: space-between;
+  text-align: right;
+
+  & figure {
+    max-height: 300px;
+  }
+}
+
+#menu {
+  display: grid;
+  background-color: var(--light);
+  color: var(--secondary);
+
+  & .about-text {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  & .cards-wrapper {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1200px;
+
+    & .card {
+      display: grid;
+      justify-content: end;
+      align-items: end;
+      text-align: center;
+      height: 350px;
+      max-width: 300px;
+      margin-top: 5rem;
+      padding: 1rem;
+      padding-top: 0;
+      border-radius: 2rem;
+      background-color: var(--lighter);
+      box-shadow: 3px 3px 5px rgb(0 0 0 / 0.3);
+
+      & p {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #999;
+      }
+
+      & .img-wrapper {
+        width: 200px;
+        height: 200px;
+        border-radius: 999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin: -60px auto 0 auto;
+        box-shadow: 3px 3px 5px rgb(0 0 0 / 0.3);
+      }
+
+      & .button {
+        line-height: 1;
+        width: 100%;
+        font-size: 1rem;
+        justify-self: center;
+        background-color: var(--primary);
+        color: var(--secondary);
+
+        & i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+#events {
+  background-image: url(images/psy2-b.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  min-height: 700px;
+  color: var(--lighter);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: linear-gradient(to left, black, rgba(255, 255, 255, 0.518));
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  & div {
+    position: relative;
+    z-index: 999;
+
+    & .about-text {
+      text-align: right;
+    }
+  }
+  & .events-table {
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.378);
+    border-radius: 2rem;
+  }
+  & table {
+    border-collapse: collapse;
+
+    & tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.504);
+      text-align: center;
+
+      &:hover {
+        color: var(--primary);
+      }
+
+      & td:first-child {
+        text-align: left;
+        padding-right: 1rem;
+      }
+      & td {
+        padding: 0.3rem;
+      }
+    }
+  }
+}
+
+#contact {
+  background-color: var(--light);
+
+  & form {
+    flex-direction: column;
+    max-width: 500px;
+    gap: 1rem;
+
+    & label {
+      text-align: left;
+      width: 100%;
+      font-weight: 700;
+      font-family: inherit;
+    }
+    & input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--secondary);
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+    }
+
+    & .button {
+      width: 100%;
+    }
+  }
+  & .social-logos {
+    gap: 1.5rem;
+    justify-content: end;
+    & i {
+      font-size: 2.5rem;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--primary);
+        transition: 0.5;
+      }
+    }
+  }
+
+  & .about-text {
+    text-align: right;
+  }
+}
+
+footer {
+  background-color: var(--secondary);
+  color: var(--lighter);
+  text-align: center;
+}
