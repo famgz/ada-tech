@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Chocolateria Delicio" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/responsive.css" />
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon" />
+
+    <title>Delicio Chocolateria</title>
+  </head>
+  <body id="home">
+    <div class="head1">
+      <p>
+        Endereço: Rua dos Sabores, 123 - Bairro Doçura Feliz, Cidade Açúcar do
+        Vale
+      </p>
+    </div>
+
+    <header>
+      <div class="head2">
+        <a href="#home">
+          <img class="logo" src="src/img/logo1.png" alt="Logo do restaurante"/>
+        </a>
+        <nav class="navegacao">
+          <a rel="cannonical" href="#cardapio">Cardápio</a>
+          <a rel="cannonical" href="#contatos">Contato</a>
+          <a rel="cannonical" href="#formulario">Dê seu Feedback</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="imagem_fundo_main"></section>
+
+      <section class="cardapio" id="cardapio">
+        <div class="boxcardapio">
+          <div class="destaque">
+            <h2 class="cardapiotext">DESTAQUES</h2>
+          </div>
+
+          <!-- Parte do Carrosel de imagens-->
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <figure class="item">
+                  <img
+                    src="src/img/petit-gateau.jpg"
+                    alt="Imagem Petit-gateau"
+                  />
+                  <figcaption>
+                    <div class="descricao_box">
+                      <p>
+                        Petit-gateau
+                        <br />
+                        R$ 25,00
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="carousel-item">
+                <figure class="item">
+                  <img
+                    src="src/img/Tiramisu.jpg"
+                    class="d-block img-fluid mx-auto"
+                    alt="Imagem Tiramisu"
+                  />
+                  <figcaption>
+                    <div class="descricao_box">
+                      <p>
+                        Tiramisu
+                        <br />
+                        R$ 30,00
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="carousel-item">
+                <figure class="item">
+                  <img
+                    src="src/img/Profiterole.jpg"
+                    class="d-block img-fluid mx-auto"
+                    alt="Imagem Profiterole"
+                  />
+                  <figcaption>
+                    <div class="descricao_box">
+                      <p>
+                        Profiterole
+                        <br />
+                        R$ 20,00
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="carousel-item">
+                <figure class="item">
+                  <img
+                    src="src/img/éclair.jpg"
+                    class="d-block img-fluid mx-auto"
+                    alt="Imagem Éclair"
+                  />
+                  <figcaption>
+                    <div class="descricao_box">
+                      <p>
+                        Éclair
+                        <br />
+                        R$ 19,00
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="carousel-item">
+                <figure class="item">
+                  <img
+                    src="src/img/milfolhas.jpg"
+                    class="d-block img-fluid mx-auto"
+                    alt="Imagem Mil_Folhas"
+                  />
+                  <figcaption>
+                    <div class="descricao_box">
+                      <p>
+                        Mil Folhas Chocolate
+                        <br />
+                        R$ 29,00
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+            <!-- Fim do Carrosel de imagens-->
+
+            <!-- Botões de Ida e Volta -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+              style="font-size: 5rem"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+              style="font-size: 5rem"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <!-- Botões de Ida e Volta -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu cards -->
+      <section class="secao-cardapio">
+        <h2 class="cardapiotext cardapio-title">CARDÁPIO</h2>
+        <div class="menu-cards center-content">
+          <div class="menu-card">
+            <div class="center-content">
+              <img src="src/img/milfolhas.jpg" alt="Mil Folhas Imagem" />
+            </div>
+            <div>
+              <h3>Mil Folhas Chocolate</h3>
+              <p class="card-desc">
+                A mil-folhas de chocolate é uma deliciosa sobremesa composta por
+                camadas crocantes de massa folhada intercaladas com cremoso
+                recheio de chocolate.
+              </p>
+              <p class="card-price">R$ 29,00</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img src="src/img/petit-gateau.jpg" alt="Petit-gateau imagem" />
+            </div>
+            <div>
+              <h3>Petit-gateau</h3>
+              <p class="card-desc">
+                Clássica sobremesa francesa composta por um pequeno bolo de
+                chocolate com centro cremoso e líquido. Servido com sorvete para
+                uma experiência indulgente.
+              </p>
+              <p class="card-price">R$ 25,00</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img src="src/img/Profiterole.jpg" alt="Profiterole Imagem" />
+            </div>
+            <div>
+              <h3>Profiterole</h3>
+              <p class="card-desc">
+                Os profiteroles são uma deliciosa sobremesa francesa feita com
+                pequenas bolas de massa choux recheadas com creme,
+                frequentemente cobertas com calda de chocolate ou glacê.
+              </p>
+              <p class="card-price">R$ 20,00</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img src="src/img/Tiramisu.jpg" alt="Imagem Tiramisu" />
+            </div>
+            <div>
+              <h3>Tiramisu</h3>
+              <p class="card-desc">
+                É é uma clássica sobremesa italiana composta por camadas de
+                biscoitos embebidos em café e creme de queijo mascarpone
+                adoçado, geralmente polvilhado com cacau em pó.
+              </p>
+              <p class="card-price">R$ 30,00</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img src="src/img/éclair.jpg" alt="Imagem Éclair" />
+            </div>
+            <div>
+              <h3>Éclair</h3>
+              <p class="card-desc">
+                Uma sofisticada sobremesa francesa. A éclair destaca-se por sua
+                massa aerada de choux, recheada com cremoso e variado creme, e
+                finalizada com uma cobertura de chocolate.
+              </p>
+              <p class="card-price">R$ 19,00</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img
+                src="src/img/palhaitaliana.jpg"
+                alt="Imagem Palha Italiana"
+              />
+            </div>
+            <div>
+              <h3>Palha Italiana - 3 Porções</h3>
+              <p class="card-desc">
+                Um doce feito à base de brigadeiro e biscoito triturado moldados
+                em tabletes. Diferente do que é imaginado,sua origem não é
+                portuguesa nem italiana, mas sim brasileira.
+              </p>
+              <p class="card-price">R$ 21,00</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img
+                src="src/img/Martini-de-Chocolate.jpg"
+                alt="Imagem Martini_Chocolate"
+              />
+            </div>
+            <div>
+              <h3>Martini Chocolate com Pimenta</h3>
+              <p class="card-desc">
+                Elaborado com um licor de chocolate premium, vodka de alta
+                qualidade e um toque sutil de xarope de pimenta, esse cocktail
+                oferece uma experiência única e equilibrada.
+              </p>
+              <p class="card-price">R$ 22,99</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img
+                src="src/img/Caipi Stout de Café.jpg"
+                alt="Imagem Caipi Stout de Café"
+              />
+            </div>
+            <div>
+              <h3>Caipi Stout de Café</h3>
+              <p class="card-desc">
+                A Caipi Stout de Café é uma variação sofisticada da tradicional
+                caipirinha brasileira, infundida com o sabor robusto de uma
+                cerveja stout de café e toques de chocolate.
+              </p>
+              <p class="card-price">R$ 19,99</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img
+                src="src/img/Batida Chocorum.jpeg"
+                alt="Imagem Batida de chocolate e rum"
+              />
+            </div>
+            <div>
+              <h3>Batida de chocolate e Rum</h3>
+              <p class="card-desc">
+                Preparada com cacau de alta qualidade, leite cremoso, e uma
+                generosa dose de rum escuro, polvilhada com raspas de chocolate.
+                Uma harmonia perfeita de sabores.
+              </p>
+              <p class="card-price">R$ 22,99</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img src="src/img/Milkshake.png" alt="Imagem MilkShake" />
+            </div>
+            <div>
+              <h3>Super Shake Chocolate - 500ml</h3>
+              <p class="card-desc">
+                Elaborado com sorvete artesanal de chocolate, leite fresco,
+                calda de caramelo artesanal e pedaços de brownie, essa deliciosa
+                criação proporciona uma experiência indulgente.
+              </p>
+              <p class="card-price">R$ 32,99</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img
+                src="src/img/cookie-recheado-com-nutella-1.jpg"
+                alt="Imagem Cookies"
+              />
+            </div>
+            <div>
+              <h3>Cookies Gourmet</h3>
+              <p class="card-desc">
+                Recheados com pedaços generosos de chocolate belga e nozes
+                tostadas, cada cookie é cuidadosamente assado para atingir uma
+                textura crocante por fora e macia por dentro.
+              </p>
+              <p class="card-price">R$ 9,99 - Unidade</p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="center-content">
+              <img
+                src="src/img/sufle de chocolate.jpg"
+                alt="Imagem Suflê de Chocolate"
+              />
+            </div>
+            <div>
+              <h3>Suflê de Chocolate</h3>
+              <p class="card-desc">
+                Sobremesa clássica que combina a riqueza do chocolate com uma
+                textura leve e aerada.O suflê é assado para criar uma casca
+                delicada por fora e um interior macio e cremoso.
+              </p>
+              <p class="card-price">R$ 20,99</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="formulario" id="formulario">
+        <div>
+          <form action="" method="post">
+            <div class="campo_form">
+              <label for="nome">Nome</label>
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Nome Completo"
+                required
+              />
+            </div>
+
+            <div class="campo_form">
+              <label for="cell">Telefone</label>
+              <input
+                type="tel"
+                name="cell"
+                id="cell"
+                placeholder="Telefone com DDD"
+                required
+              />
+            </div>
+
+            <div class="campo_form">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Digite seu email"
+                required
+              />
+            </div>
+
+            <div class="campo_form">
+              <label for="sugestao">Sugestão:</label>
+              <textarea
+                name="sugestao"
+                id="sugestao"
+                cols="30"
+                rows="6"
+                placeholder="Conte-nos sugestões, ideias, críticas"
+              ></textarea>
+            </div>
+
+            <div class="campo_form">
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+        <div class="social">
+          <h2>Dê seu Feedback e nos siga nas Redes Sociais</h2>
+          <p class="textsocial">
+            "Ampliando os limites do sabor! Em nossa chocolateria, não apenas
+            oferecemos deliciosos chocolates, mas também pratos exclusivos que
+            incorporam o chocolate de maneiras surpreendentes.
+            <br />
+            <br />
+            <br />
+            Compartilhe sua experiência gastronômica única conosco! 🍫🍽️
+            #ChocoCulinary"
+          </p>
+        </div>
+      </section>
+
+      <!--Imagem de fundo final-->
+      <section class="imagem_fundo_main">
+        <p>
+          Sedução em cada mordida, paixão em cada barra. Delício, onde o
+          chocolate é mais do que um doce, é uma paixão!
+        </p>
+      </section>
+    </main>
+
+    <footer id="contatos">
+      <div class="foot1">
+        <img src="src/img/logo2.png" alt="Logo Delicio" />
+        <p class="texto_destaque_footer">Delicio Webshop, LLC</p>
+        <p>
+          <span class="texto_destaque_footer">Email:</span>
+          contatodelicio@gmail.com
+        </p>
+        <p>
+          <span class="texto_destaque_footer">Telefone:</span> (24) 99999-9999
+        </p>
+      </div>
+      <div class="foot2">
+        <p><span class="titulo_footer">Sobre nós</span></p>
+        <p>
+          Bem-vindo à Delicio, onde a paixão pelo chocolate ganha vida! Somos
+          uma chocolateria dedicada a criar experiências sensoriais únicas e
+          indulgentes. Nossos pratos com chocolates artesanais são elaborados
+          com ingredientes da mais alta qualidade, cuidadosamente selecionados
+          para proporcionar momentos de prazer irresistível.
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
