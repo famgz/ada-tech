@@ -49,14 +49,13 @@ function main() {
   }
 
   const reportStatus = [];
-
   emailList.forEach(({ name, email, sendMarketing }) => {
     if (!sendMarketing) {
       reportStatus.push({
         'NOME CLIENTE': name,
         'EMAIL CLIENTE': email,
-        STATUS: '',
-        OBS: res.message,
+        STATUS: 'NÃO INSCRITO',
+        OBS: 'Cliente não deseja receber emails',
       });
       return;
     }
