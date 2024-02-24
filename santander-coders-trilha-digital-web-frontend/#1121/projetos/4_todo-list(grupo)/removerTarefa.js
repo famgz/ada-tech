@@ -12,7 +12,7 @@ export function removerTarefa(tarefas) {
   let id;
 
   while (tarefaEncontrada === -1) {
-    id = Number(prompt('Qual tarefa deseja remover?: ').trim()?.[0]);
+    id = Number(prompt('Qual ID da tarefa que deseja remover?: ').trim()?.[0]);
     tarefaEncontrada = tarefas.findIndex((tarefa) => tarefa.id === id);
     if (tarefaEncontrada === -1) {
       console.log('Tarefa não encontrada.');

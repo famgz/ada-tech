@@ -43,7 +43,7 @@ function iniciar() {
       }
     } while (escolha === null);
 
-    if (escolha == 0) {
+    if (escolha === 0) {
       return;
     }
 
