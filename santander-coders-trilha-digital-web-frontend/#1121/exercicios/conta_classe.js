@@ -15,44 +15,31 @@ Em seu script, crie um array que receba todas as instâncias de conta. Antes de 
 */
 
 const contas = [];
+const pessoas = [];
 
 class Conta {
+  #titular;
   #saldo = 0;
   #contaAtiva = true;
-  #titular;
 
-  constructor(nome) {
-    if (!this.#nomeEhValido(nome)) {
-      throw new Error('Nome invalido');
-    }
-    if (!this.#contaEhUnica(nome)) {
+  constructor(titular) {
+    if (this.#titularPossuiConta(titular)) {
       throw new Error(`O titular ${nome} já possui conta!`);
     }
-    this.#titular = nome;
+
+    this.#titular = titular;
     contas.push(this);
-    console.log(`Conta do titular ${this.#titular} criada com sucesso`);
+    console.log(`Conta do titular ${this.#titular.nome} criada com sucesso`);
   }
 
-  #contaEhUnica(nome) {
+  #titularPossuiConta(titular) {
     for (const conta of contas) {
-      if (conta.titular === nome) {
-        console.log('nome existe', conta.titular);
-        return false;
+      if (conta.titular === titular) {
+        console.log(`Titular ${titular.nome} já possui conta`);
+        return true;
       }
     }
-    return true;
-  }
-
-  #nomeEhValido(nome) {
-    if (nome.length < 4) {
-      return false;
-    }
-    for (const letra of nome) {
-      if (!isNaN(parseInt(letra))) {
-        return false;
-      }
-    }
-    return true;
+    return false;
   }
 
   get saldo() {
@@ -63,19 +50,40 @@ class Conta {
     return this.#titular;
   }
 
-  depositar(valor) {
-    if (isNaN(parseInt(valor))) {
-      console.error('Valor para depósito invalido');
+  get estaAtiva() {
+    return this.#contaAtiva;
+  }
+
+  exibirDados() {
+    console.log(
+      `Conta do titular ${this.#titular.nome} possui R$ ${this.#saldo}`
+    );
+  }
+
+  depositar(valor, logar = true) {
+    // TODO: implementar validacao do valor externamente
+    valor = parseFloat(valor);
+    if (isNaN(valor)) {
+      console.error('Valor para depósito inválido');
+      return false;
+    }
+    if (valor < 0) {
+      console.error('Valor para depósito não pode ser negativo');
       return false;
     }
     this.#saldo += valor;
-    console.log(`Depósito de R$ ${valor} realizado com sucesso`);
+    if (logar) {
+      console.log(`Depósito de R$ ${valor} realizado com sucesso`);
+    }
     return true;
   }
 
-  sacar(valor) {
-    if (isNaN(parseInt(valor))) {
-      console.error('Valor para saque invalido');
+  sacar(valor, logar = true) {
+    // TODO: implementar validacao do valor externamente
+
+    valor = parseFloat(valor);
+    if (isNaN(valor)) {
+      console.error('Valor para saque inválido');
       return false;
     }
     if (valor > this.#saldo) {
@@ -83,7 +91,62 @@ class Conta {
       return false;
     }
     this.#saldo -= valor;
-    console.log(`Saque de R$ ${valor} realizado com sucesso`);
+    if (logar) {
+      console.log(`Saque de R$ ${valor} realizado com sucesso`);
+    }
+    return true;
+  }
+
+  transferir(valor, titularDestino) {
+    if (titularDestino === this.titular) {
+      console.error(`Titular origem e destino são os mesmos`);
+      return false;
+    }
+    const contaDestino = contas.find(
+      (conta) => conta.titular === titularDestino
+    );
+    if (!contaDestino) {
+      console.error(`A conta do titular ${titularDestino.nome} não existe`);
+      return false;
+    }
+    if (!contaDestino.estaAtiva) {
+      console.error(`A conta do titular ${titularDestino.nome} não está ativa`);
+      return false;
+    }
+
+    // TODO: implementar validacao do valor externamente
+
+    valor = parseFloat(valor);
+    if (isNaN(valor)) {
+      console.error('Valor para transferência inválido');
+      return false;
+    }
+    if (valor < 0) {
+      console.error('Valor para transferência não pode ser negativo');
+      return false;
+    }
+    if (valor > this.#saldo) {
+      console.error('Saldo insuficiente para transferência');
+      return false;
+    }
+
+    // ! método atômico?
+    const depositado = contaDestino.depositar(valor, false);
+    if (!depositado) {
+      console.error('Erro ao depositar na conta destino');
+    }
+    const sacado = this.sacar(valor, false);
+    if (!sacado) {
+      console.error('Erro ao sacar na conta origem');
+      // reverter depósito
+      contaDestino.sacar(valor, false);
+    }
+
+    console.log(
+      `Transferência de ${this.#titular.nome} para ${
+        titularDestino.nome
+      } no valor de R$ ${valor} realizada com sucesso!`
+    );
     return true;
   }
 
@@ -97,7 +160,9 @@ class Conta {
       return false;
     }
     this.#contaAtiva = false;
-    console.log(`Conta do titular ${this.#titular} desativada com sucesso`);
+    console.log(
+      `Conta do titular ${this.#titular.nome} desativada com sucesso`
+    );
     return true;
   }
 
@@ -107,24 +172,95 @@ class Conta {
       return false;
     }
     this.#contaAtiva = true;
-    console.log(`Conta do titular ${this.#titular} ativada com sucesso`);
+    console.log(`Conta do titular ${this.#titular.nome} ativada com sucesso`);
     return true;
   }
 }
 
-const conta1 = new Conta('John Galt');
-// const conta2 = new Conta('John Galt'); // erro conta já existe
-const conta2 = new Conta('John Bool');
+class Pessoa {
+  #nome;
+  #idade;
+  #cpf;
 
-conta1.depositar(100);
-conta1.sacar(100);
+  constructor(nome, idade, cpf) {
+    if (!this.#nomeEhValido(nome)) {
+      throw new Error('Nome inválido');
+    }
+    if (this.#nomeJaExiste(nome)) {
+      throw new Error('Nome já existe');
+    }
 
-conta2.depositar(500);
-conta2.sacar(50.75);
-conta2.sacar(500); // erro saldo insuficiente
+    // TODO: validar CPF
 
-conta2.desativarConta(); // erro possui saldo
+    this.#nome = nome;
+    this.#idade = idade;
+    this.#cpf = cpf;
 
-for (const conta of contas) {
-  console.log(`Conta de ${conta.titular} possui R$ ${conta.saldo}`);
+    pessoas.push(this);
+  }
+
+  exibirDados() {
+    const dados = {
+      'Nome Titular': this.#nome,
+      'Idade Titular': this.#idade,
+      'CPF Titular': this.#cpf,
+    };
+    console.table(dados);
+  }
+
+  #nomeEhValido(nome) {
+    if (nome.length < 4) {
+      console.error('Nome titular deve conter no mínimo 4 caracteres');
+      return false;
+    }
+    for (const letra of nome) {
+      if (!isNaN(parseInt(letra))) {
+        console.error('Nome titular não pode contar números');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  #nomeJaExiste(nome) {
+    for (const pessoa of pessoas) {
+      if (pessoa.nome.toLowerCase() === nome.toLowerCase()) {
+        console.log('nome já existe:', pessoa.nome);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  get nome() {
+    return this.#nome;
+  }
+
+  get cpf() {
+    return this.#cpf;
+  }
+
+  get idade() {
+    return this.#idade;
+  }
 }
+
+// TODO: criarConta() dentro de Pessoa -> eg.: pessoa.conta.sacar() ?
+
+const pessoa1 = new Pessoa('joao', 32, '123456');
+const pessoa2 = new Pessoa('pedro', 20, '456789');
+
+console.log();
+
+const conta1 = new Conta(pessoa1);
+const conta2 = new Conta(pessoa2);
+
+console.log();
+
+conta1.depositar(500);
+conta1.transferir(50, pessoa2);
+
+console.log();
+
+conta1.exibirDados();
+conta2.exibirDados();
