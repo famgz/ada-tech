@@ -264,3 +264,5 @@ console.log();
 
 conta1.exibirDados();
 conta2.exibirDados();
+
+console.log(conta2.teste);
