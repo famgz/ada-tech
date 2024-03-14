@@ -1,32 +1,34 @@
-interface ITitular {
-  nome: String;
+interface IPessoa {
+  nome: string;
   idade: number;
-  cpf: String;
+  cpf: string;
 }
 
 interface IConta {
-  titular: Titular;
+  titular: Pessoa;
   saldo: number;
   contaAtiva: boolean;
 }
 
 const contas: Conta[] = [];
-const titulares: Titular[] = [];
+const titulares: Pessoa[] = [];
 
 class Conta {
-  private _titular: Titular;
-  private _saldo: number = 0;
-  private _contaAtiva: boolean = true;
+  private _titular: Pessoa;
+  private _saldo: number;
+  private _contaAtiva: boolean;
 
-  constructor(titular: Titular) {
+  constructor(titular: Pessoa) {
     if (this.titularPossuiConta(titular)) {
       throw new Error(`O titular ${titular.nome} já possui conta!`);
     }
     this._titular = titular;
+    this._saldo = 0;
+    this._contaAtiva = true;
     contas.push(this);
   }
 
-  private titularPossuiConta(titular: Titular) {
+  private titularPossuiConta(titular: Pessoa) {
     for (const conta of contas) {
       if (conta.titular === titular) {
         console.log(`Titular ${titular.nome} já possui conta`);
@@ -36,7 +38,7 @@ class Conta {
     return false;
   }
 
-  get titular(): Titular {
+  get titular(): Pessoa {
     return this._titular;
   }
 
@@ -44,7 +46,7 @@ class Conta {
     return this._saldo;
   }
 
-  get nomeTitular(): String {
+  get nomeTitular(): string {
     return this._titular.nome;
   }
 
@@ -156,12 +158,12 @@ class Conta {
   }
 }
 
-class Titular {
-  private _nome: String;
+class Pessoa {
+  private _nome: string;
   private _idade: number;
-  private _cpf: String;
+  private _cpf: string;
 
-  constructor(nome: String, idade: number, cpf: String) {
+  constructor(nome: string, idade: number, cpf: string) {
     if (this.nomeInvalido(nome)) {
       throw new Error(`Nome inválido: ${nome}`);
     }
@@ -177,17 +179,17 @@ class Titular {
     titulares.push(this);
   }
 
-  get nome(): String {
+  get nome(): string {
     return this._nome;
   }
   get idade(): number {
     return this._idade;
   }
-  get cpf(): String {
+  get cpf(): string {
     return this._cpf;
   }
 
-  private nomeInvalido(nome: String): boolean {
+  private nomeInvalido(nome: string): boolean {
     if (nome.length < 4) {
       console.error('ERRO: Nome titular deve conter no mínimo 4 caracteres');
       return true;
@@ -201,7 +203,7 @@ class Titular {
     return false;
   }
 
-  private titularJaExiste(cpf: String): boolean {
+  private titularJaExiste(cpf: string): boolean {
     for (const titular of titulares) {
       if (titular._cpf === cpf) {
         return true;
@@ -220,8 +222,8 @@ class Titular {
   }
 }
 
-const titular1 = new Titular('Pedro', 23, '123456');
-const titular2 = new Titular('Joao', 25, '456789');
+const titular1 = new Pessoa('Pedro', 23, '123456');
+const titular2 = new Pessoa('Joao', 25, '456789');
 
 console.log();
 
