@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      input {
+        max-width: 35px;
+      }
+    </style>
+    <title>Mega Sena</title>
+  </head>
+  <body>
+    <h1>Mega Sena</h1>
+
+    Números: <span><b hidden id="segredo"></b></span>
+    <hr />
+
+    Números digitados:
+    <br />
+    <input type="number" min="1" max="60" />
+    <input type="number" min="1" max="60" />
+    <input type="number" min="1" max="60" />
+    <input type="number" min="1" max="60" />
+    <input type="number" min="1" max="60" />
+    <input type="number" min="1" max="60" />
+
+    <br />
+    <br />
+    <button onClick="revelar()">Relevar números</button>
+  </body>
+
+  <script>
+    function gerarAleatorio() {
+      return (Math.floor(Math.random() * 60) + 1).toString();
+    }
+
+    function revelar() {
+      const segredo = document.getElementById('segredo');
+
+      let nums = [];
+      while (nums.length < 6) {
+        const rand = gerarAleatorio();
+        if (nums.includes(rand)) {
+          continue;
+        }
+        nums.push(rand);
+      }
+      nums = nums.join('  ');
+
+      segredo.innerText = nums;
+
+      segredo.removeAttribute('hidden');
+    }
+  </script>
+</html>
