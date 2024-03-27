@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #lampadas {
+        margin-top: 20px;
+      }
+      .lampada {
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: center;
+        & p {
+          margin-top: 0;
+        }
+      }
+    </style>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Lampadas</h1>
+    <input type="text" name="item" id="item" />
+    <button id="btnAddItem">Adicionar lâmpada</button>
+    <div id="lampadas"></div>
+  </body>
+  <script>
+    const wrapper = document.getElementById('lampadas');
+    const btnAdd = document.getElementById('btnAddItem');
+    const input = document.getElementById('item');
+
+    function estaQuebrada(el) {
+      return el.getAttribute('quebrada');
+    }
+
+    function addHoverListener() {
+      const lampadas = wrapper.querySelectorAll('.lampada');
+      lampadas.forEach((lamp, i) => {
+        // acender
+        lamp.addEventListener('mouseenter', (ev) => {
+          if (estaQuebrada(lamp)) {
+            return;
+          }
+          lamp.querySelector('img').src = '/assets/acesa.jpg';
+        });
+
+        // apagar
+        lamp.addEventListener('mouseleave', (ev) => {
+          if (estaQuebrada(lamp)) {
+            return;
+          }
+          lamp.querySelector('img').src = '/assets/apagada.jpg';
+        });
+
+        // quebrar
+        lamp.addEventListener('click', (ev) => {
+          lamp.setAttribute('quebrada', 'true');
+          lamp.querySelector('img').src = '/assets/quebrada.jpg';
+          lamp.querySelector('p').style.textDecoration = 'line-through';
+        });
+      });
+    }
+
+    btnAdd.addEventListener('click', (el) => {
+      const texto = input.value.trim();
+      if (texto.length === 0) {
+        alert('Insira um texto para adicionar lâmpada');
+        return;
+      }
+      console.log(texto);
+      wrapper.insertAdjacentHTML(
+        'beforeend',
+        `
+        <div class="lampada">
+            <img src="assets/apagada.jpg" alt=""/>
+            <p>${texto}</p>
+        </div>
+        `
+      );
+      input.value = '';
+      addHoverListener();
+    });
+  </script>
+</html>
