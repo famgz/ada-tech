@@ -45,7 +45,7 @@
           if (estaQuebrada(lamp)) {
             return;
           }
-          lamp.querySelector('img').src = '/assets/acesa.jpg';
+          lamp.querySelector('img').src = 'assets/acesa.jpg';
         });
 
         // apagar
@@ -53,13 +53,13 @@
           if (estaQuebrada(lamp)) {
             return;
           }
-          lamp.querySelector('img').src = '/assets/apagada.jpg';
+          lamp.querySelector('img').src = 'assets/apagada.jpg';
         });
 
         // quebrar
         lamp.addEventListener('click', (ev) => {
           lamp.setAttribute('quebrada', 'true');
-          lamp.querySelector('img').src = '/assets/quebrada.jpg';
+          lamp.querySelector('img').src = 'assets/quebrada.jpg';
           lamp.querySelector('p').style.textDecoration = 'line-through';
         });
       });
