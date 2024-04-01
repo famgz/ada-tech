@@ -9,13 +9,31 @@
       }
       .lampada {
         display: inline-block;
-        cursor: pointer;
+        position: relative;
+        margin: 5px;
         border: 1px solid #ccc;
         border-radius: 10px;
         overflow: hidden;
         text-align: center;
         & p {
           margin-top: 0;
+        }
+        .deletar {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          vertical-align: middle;
+          color: white;
+          background-color: #aaa;
+          border-radius: 999px;
+          cursor: pointer;
+          z-index: 50;
         }
       }
     </style>
@@ -37,32 +55,33 @@
       return el.getAttribute('quebrada');
     }
 
-    function addHoverListener() {
-      const lampadas = wrapper.querySelectorAll('.lampada');
-      lampadas.forEach((lamp, i) => {
-        // acender
-        lamp.addEventListener('mouseenter', (ev) => {
-          if (estaQuebrada(lamp)) {
-            return;
-          }
-          lamp.querySelector('img').src = 'assets/acesa.jpg';
-        });
-
-        // apagar
-        lamp.addEventListener('mouseleave', (ev) => {
-          if (estaQuebrada(lamp)) {
-            return;
-          }
-          lamp.querySelector('img').src = 'assets/apagada.jpg';
-        });
-
-        // quebrar
-        lamp.addEventListener('click', (ev) => {
-          lamp.setAttribute('quebrada', 'true');
-          lamp.querySelector('img').src = 'assets/quebrada.jpg';
-          lamp.querySelector('p').style.textDecoration = 'line-through';
-        });
+    function adicionarListenersLampada(lamp) {
+      // acender
+      lamp.addEventListener('mouseenter', (ev) => {
+        if (estaQuebrada(lamp)) {
+          return;
+        }
+        lamp.querySelector('img').src = './assets/acesa.jpg';
       });
+
+      // apagar
+      lamp.addEventListener('mouseleave', (ev) => {
+        if (estaQuebrada(lamp)) {
+          return;
+        }
+        lamp.querySelector('img').src = './assets/apagada.jpg';
+      });
+
+      // quebrar
+      lamp.addEventListener('click', (ev) => {
+        lamp.setAttribute('quebrada', true);
+        lamp.querySelector('img').src = './assets/quebrada.jpg';
+        lamp.querySelector('p').style.textDecoration = 'line-through';
+      });
+
+      // deletar
+      const btnDeletar = lamp.querySelector('.deletar');
+      btnDeletar.addEventListener('click', () => lamp.remove());
     }
 
     btnAdd.addEventListener('click', (el) => {
@@ -71,18 +90,17 @@
         alert('Insira um texto para adicionar lâmpada');
         return;
       }
-      console.log(texto);
-      wrapper.insertAdjacentHTML(
-        'beforeend',
-        `
-        <div class="lampada">
-            <img src="assets/apagada.jpg" alt=""/>
-            <p>${texto}</p>
-        </div>
-        `
-      );
+      const lampada = document.createElement('div');
+      lampada.classList.add('lampada');
+      lampada.innerHTML = `
+        <img src="./assets/apagada.jpg" alt="imagem lampada" title="Clique para quebrar"/>
+        <p>${texto}</p>
+        <div class="deletar">✖</div>
+      `;
+      adicionarListenersLampada(lampada);
+
+      wrapper.appendChild(lampada);
       input.value = '';
-      addHoverListener();
     });
   </script>
 </html>

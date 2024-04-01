@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>lista compras aula 5</title>
+  </head>
+  <body>
+    <!-- Materia nova ->
+    Adicionar o line-through e retirá-lo para mexermos no style
+
+    Dado o atual HTML estilizado, vamos fazer o seguinte ->
+
+    Vamos utilizar um array de objetos para representar os nossos produtos.
+    Ao iniciar, vamos adicionar os elementos contidos no array ao HTML;
+    Poderemos selecionar o produto (Checkbox) e assim ele ficará riscado da lista.
+
+    DESAFIO
+    Teremos um campo para fazer a soma
+    Também teremos um campo chamado "Limite".
+    Ao ultrapassarmos esse limite, o valor da soma deverá ficar vermelho
+    -->
+
+    <h1>Lista de compras</h1>
+    <input
+      id="limite"
+      class="cabecalho"
+      required
+      placeholder="Limite de preço (00.00)"
+      type="number" />
+    <input
+      id="produto"
+      placeholder="Produto"
+      class="cabecalho"
+      required
+      type="text" />
+    <input
+      id="valor"
+      placeholder="Valor (00.00)"
+      class="cabecalho"
+      required
+      type="number" />
+    <button onclick="adicionarItem()" id="add">Adicionar Produto</button>
+
+    <ul id="lista">
+      <!-- <li>
+        <input
+          class="checkbox"
+          type="checkbox"
+          name=""
+          id="checkbox_produto_1" />
+        <span>Arroz - 1kg</span>
+        <span>R$25,00</span>
+        <button>Remover</button>
+      </li> -->
+    </ul>
+
+    <hr />
+
+    <h3>Limite</h3>
+    <span id="limiteDisplay"></span>
+
+    <h3>Soma</h3>
+    <span id="soma"></span>
+  </body>
+</html>
