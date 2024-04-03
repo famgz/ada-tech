@@ -16,6 +16,7 @@ const inputs = [inputLimite, inputProduto, inputValor];
 const limiteDisplay = document.getElementById('limiteDisplay');
 const somaDisplay = document.getElementById('soma');
 let limiteTotal = 100;
+inputLimite.value = limiteTotal;
 
 function formatToReal(n) {
   n = Number(n);
@@ -28,12 +29,12 @@ function formatToReal(n) {
   }).format(n);
 }
 
-function adicionarItem() {
+function adicionarProduto() {
   const limite = parseFloat(inputLimite.value);
   const produto = inputProduto.value;
   const valor = parseFloat(inputValor.value);
 
-  if (!(limite && produto && valor)) {
+  if (!(limite && produto && valor) || isNaN(limite) || isNaN(valor)) {
     alert('Todos os campos devem ser preenchidos');
     return;
   }
@@ -70,9 +71,10 @@ function adicionarListenersItem(li, idx) {
 
 function limparInputs() {
   inputs.forEach((el) => (el.value = ''));
+  inputLimite.value = limiteTotal;
 }
 
-function calcularSoma() {
+function calcularValores() {
   const total = produtos.reduce((acc, curr) => acc + curr.valor, 0);
   limiteDisplay.innerText = formatToReal(limiteTotal);
   somaDisplay.innerText = formatToReal(total);
@@ -98,7 +100,7 @@ function renderizar() {
     lista.appendChild(li);
   });
 
-  calcularSoma();
+  calcularValores();
 }
 
 renderizar();
