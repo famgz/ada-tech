@@ -1,0 +1,76 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" (click)="goToPage(pages.HOME)">
+      <img src="./../assets/images/logo_wt.png" alt="" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            (click)="goToPage(pages.HOME)"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToPage(pages.ABOUT)">Sobre nós</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToPage(pages.ADDRESS)">Endereço</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToPage(pages.CONTACT)">Contato</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <a class="btn btn-outline-light" href="#">Search</a>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+<!-- Main -->
+<main id="main">
+  <app-home
+    *ngIf="currentPage === pages.HOME"
+    [sectionFeatures]="appData.sectionFeatures"
+  ></app-home>
+  <app-about
+    *ngIf="currentPage === pages.ABOUT"
+    [sectionAbout]="appData.sectionAbout"
+  ></app-about>
+  <app-contact
+    *ngIf="currentPage === pages.CONTACT"
+    [sectionContact]="appData.sectionContact"
+  ></app-contact>
+  <app-address
+    *ngIf="currentPage === pages.ADDRESS"
+    [sectionAddress]="appData.sectionAddress"
+  ></app-address>
+</main>
+<!-- End Main -->
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy;2022 Todos os direitos reservados.</p>
+</footer>
